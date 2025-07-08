@@ -2,6 +2,7 @@ import {Menu, Button, EmptyState, For} from "@chakra-ui/react"
 import type {ReactElement} from "react";
 import { TbShoppingCartQuestion } from "react-icons/tb";
 import { IoIosArrowDown } from "react-icons/io";
+import {Link} from "react-router";
 
 export interface SectionMenuProps {
    name: string;
@@ -20,7 +21,9 @@ export function SectionMenu({name, categories}: SectionMenuProps): ReactElement 
                             categories?.length > 0 ? (
                                 <For each={categories}>
                                     {(item: string, index: number) => (
-                                        <Menu.Item key={index} value="new-txt">{item}</Menu.Item>
+                                        <Link key={index} to={"categories/" + item.toLowerCase()}>
+                                            <Menu.Item  value="new-txt">{item}</Menu.Item>
+                                        </Link>
                                     )}
                                 </For>)
                                 :

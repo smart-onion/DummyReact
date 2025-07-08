@@ -1,0 +1,7 @@
+
+#root{
+    margin:1em;
+    box-shadow: 10px 11px 155px -13px rgba(0,0,0,0.66);
+    -webkit-box-shadow: 10px 11px 155px -13px rgba(0,0,0,0.66);
+    -moz-box-shadow: 10px 11px 155px -13px rgba(0,0,0,0.66);
+}
