@@ -34,6 +34,56 @@ const products: BestFromCategory[] = [
                 id: 1
             }
         ]
+    },
+    {
+        category: "test",
+        products:[
+            {
+                image: "/product.jpg",
+                tags: ["new", "bestseller"],
+                price: 10.99,
+                rate: 4,
+                title: "ProductCard",
+                id: 1
+            },
+            {
+                image: "/heavy.jpg",
+                tags: ["new"],
+                price: 12.99,
+                rate: 3,
+                title: "Some item",
+                id: 1
+            }
+        ]
+    },
+    {
+        category: "test",
+        products:[
+            {
+                image: "/product.jpg",
+                tags: ["new", "bestseller"],
+                price: 10.99,
+                rate: 4,
+                title: "ProductCard",
+                id: 1
+            },
+            {
+                image: "/heavy.jpg",
+                tags: ["new"],
+                price: 12.99,
+                rate: 3,
+                title: "Some item",
+                id: 1
+            },
+            {
+                image: "/heavy.jpg",
+                tags: ["new"],
+                price: 12.99,
+                rate: 3,
+                title: "Some item",
+                id: 1
+            }
+        ]
     }
 
 ]

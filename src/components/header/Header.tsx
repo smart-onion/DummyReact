@@ -15,7 +15,7 @@ export function Header() {
         {name: "Smartphones", categories: ["Apple"]},
         {name: "Computers", categories: []},]
     return (
-        <Box padding={3} borderBottom={"1px solid"} margin={1} >
+        <Box padding={3} borderBottom={"1px solid"} margin={1} position={"static"}>
             <Flex justify="space-evenly" align="center">
                 <Heading>DummyReact</Heading>
                 <Flex direction="row" gap={"5"}>
