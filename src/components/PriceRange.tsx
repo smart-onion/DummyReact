@@ -1,20 +1,22 @@
 import {Field, Flex, Input, InputGroup, Slider} from "@chakra-ui/react";
-import {useRef, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {type RootState} from "../redux/app/store.ts"
+import {setMin, setMax, type PriceRangeType} from "../redux/slices/priceRangeSlice.ts";
 
 export function PriceRange() {
-    const [priceRange, setPriceRange] = useState({min: 0, max: 100});
-    const minStepBetween = useRef(8);
-    const {currency, currencySign} = {currency: 'USD', currencySign: '$'}
-
-    const onPriceRangeChanged = (e){
-
-    }
+    const {currencySign} = {currencySign: '$'}
+    const priceRange = useSelector<RootState,PriceRangeType>((state) => state.priceRange.value);
+    const dispatch = useDispatch();
     return (
 
-        <Slider.Root onValueChange={(d) => setPriceRange({min: d.value[0], max: d.value[1]})}
+        <Slider.Root onValueChange={(d) => {
+            dispatch(setMin(d.value[0]));
+            dispatch(setMax(d.value[1]));
+        }}
+                     value={[priceRange.min, priceRange.max]}
                      width="xs"
                       defaultValue={[priceRange.min,priceRange.max]}
-                      minStepsBetweenThumbs={minStepBetween.current}
+                      minStepsBetweenThumbs={priceRange.minStep}
         >
             <Slider.Control >
                 <Slider.Track >
@@ -25,8 +27,10 @@ export function PriceRange() {
             <Flex direction="row" justify="space-between">
                 <Field.Root>
                 <Field.Label>Min</Field.Label>
-                <InputGroup startElement={currencySign} width={"5em"}>
-                    <Input placeholder={`${priceRange.min}`} onChange={}/>
+                <InputGroup startElement={currencySign} width={"7em"}>
+                    <Input placeholder={`${priceRange.min}`}
+                           onChange={(e) =>
+                               dispatch(setMin(+e.target.value))} />
                 </InputGroup>
                 </Field.Root>
 

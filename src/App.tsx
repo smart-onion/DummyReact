@@ -3,6 +3,7 @@ import './App.css'
 import {Layout} from "./pages/Layout.tsx";
 import {Home} from "./pages/Home.tsx";
 import {Category} from "./pages/Category.tsx";
+
 function App() {
 
   return (
