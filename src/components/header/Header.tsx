@@ -17,7 +17,7 @@ export function Header() {
     return (
         <Box padding={3} borderBottom={"1px solid"} margin={1} position={"static"}>
             <Flex justify="space-evenly" align="center">
-                <Heading>DummyReact</Heading>
+                <Link to={"/"}><Heading>DummyReact</Heading></Link>
                 <Flex direction="row" gap={"5"}>
                     {sections.map((section, index: number) => (
                         <SectionMenu key={index} name={section.name} categories={section.categories} />
