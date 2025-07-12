@@ -13,7 +13,7 @@ function App() {
                 <Route path={"/"} element={<Layout />}>
                     <Route path={"/"} element={<Home />}/>
                     <Route path={"/categories"} element={<Category />}>
-                        <Route path={":category"}/>
+                        <Route path={":category/?"}/>
                     </Route>
                 </Route>
             </Routes>
